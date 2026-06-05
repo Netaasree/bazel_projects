@@ -1,0 +1,11 @@
+load("@rules_cc//cc:defs.bzl","cc_binary")
+
+#Go to the rules_cc dependency,
+#open cc/defs.bzl,
+#and import the cc_binary rule.
+
+
+cc_binary(
+    name="app",
+    srcs=["main.cpp"],
+)
