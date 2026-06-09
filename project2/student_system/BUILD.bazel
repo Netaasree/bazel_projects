@@ -1,11 +1,18 @@
-load("@rules_cc//cc:defs.bzl","cc_binary")
+load("@rules_cc//cc:defs.bzl","cc_binary","cc_library")
 
 #Go to the rules_cc dependency,
 #open cc/defs.bzl,
 #and import the cc_binary rule.
 
+cc_library(
+    name="student",
+    srcs=["student.cpp"],
+    hdrs=["student.h"],
+)
+
 
 cc_binary(
     name="app",
     srcs=["main.cpp"],
+    deps=[":student"],
 )

@@ -1,6 +1,12 @@
-#include <iostream>
+#include "student.h"
 
 int main(){
-    std::cout<<"Student Management System" << std::endl;
+    Student s;
+
+    s.name="Netaasree";
+    s.age=22;
+
+    s.displayInfo();
+
     return 0;
 }
