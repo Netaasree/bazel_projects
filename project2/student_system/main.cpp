@@ -1,12 +1,18 @@
 #include "student.h"
+#include "student_database.h"
 
 int main(){
-    Student s;
+    StudentDatabase db;
 
-    s.name="Netaasree";
-    s.age=25;
+    Student s1("Netaasree",22);
+    Student s2("Ram",21);
+    Student s3("Hanuma",20);
 
-    s.displayInfo();
+    db.addStudent(s1);
+    db.addStudent(s2);
+    db.addStudent(s3);
+
+    db.displayAllStudents();
 
     return 0;
 }

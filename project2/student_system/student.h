@@ -8,6 +8,8 @@ class Student{
     std::string name;
     int age;
 
+    Student(std::string studentName,int studentAge);
+    
     void displayInfo();
 };
 

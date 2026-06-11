@@ -10,9 +10,19 @@ cc_library(
     hdrs=["student.h"],
 )
 
+cc_library(
+    name="student_database",
+    srcs=["student_database.cpp"],
+    hdrs=["student_database.h"],
+    deps=[":student"],
+)
+
 
 cc_binary(
     name="app",
     srcs=["main.cpp"],
-    deps=[":student"],
+    deps=[
+        ":student",
+        ":student_database",
+        ],
 )
