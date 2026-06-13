@@ -12,6 +12,7 @@ int main(){
     db.addStudent(s2);
     db.addStudent(s3);
 
+    db.removeStudent("Ram");
     db.displayAllStudents();
 
     return 0;

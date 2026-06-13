@@ -10,6 +10,8 @@ class StudentDatabase{
 
         void addStudent(Student newstudent);
         void displayAllStudents();
+        void searchStudent(std::string name);
+        void removeStudent(std::string name);
 };
 
 #endif
