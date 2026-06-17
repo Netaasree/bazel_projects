@@ -4,13 +4,6 @@
 
 int main(){
     StudentDatabase db;
-    Student s1("sree", 22);
-    Student s2("Ragu", 21);
-    Student s3("venky", 20);
-
-    db.addStudent(s1);
-    db.addStudent(s2);
-    db.addStudent(s3);
     int choice=0;
     while (choice!=5){
     std::cout << "\nStudent Management System\n";
@@ -22,6 +15,21 @@ int main(){
 
     std::cout<<"Enter choice: ";
     std::cin>>choice;
+    if(choice==1){
+        std::string name;
+        int age;
+
+        std::cout<<"Enter Name: ";
+        std::cin>>name;
+
+        std::cout<<"Enter Age: ";
+        std::cin>>age;
+
+        Student newStudent(name,age);
+
+        db.addStudent(newStudent);
+        std::cout<<"Student added successfully!"<<std::endl;
+    }
     if (choice==2){
         db.displayAllStudents();
     }
