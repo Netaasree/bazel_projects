@@ -1,9 +1,17 @@
 #include "student.h"
 #include "student_database.h"
 #include <iostream>
+#include<fstream>
 
 int main(){
     StudentDatabase db;
+    std::ifstream file("/home/netaasree/bazel_projects/project2/student_system/students.txt");
+    if(file.is_open()){
+        std::cout<<"File opened successfully!"<<std::endl;
+    }
+    else{
+        std::cout<<"File not opened"<<std::endl;
+    }
     int choice=0;
     while (choice!=5){
     std::cout << "\nStudent Management System\n";
