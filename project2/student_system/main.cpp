@@ -6,6 +6,15 @@
 int main(){
     StudentDatabase db;
     std::ifstream file("/home/netaasree/bazel_projects/project2/student_system/students.txt");
+    
+    std::string name;
+    int age;
+
+    while(file>>name>>age){
+    Student newStudent(name,age);
+    db.addStudent(newStudent);
+    };
+
     if(file.is_open()){
         std::cout<<"File opened successfully!"<<std::endl;
     }
