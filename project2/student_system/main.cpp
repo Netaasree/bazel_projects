@@ -6,7 +6,8 @@
 int main(){
     StudentDatabase db;
     std::ifstream file("/home/netaasree/bazel_projects/project2/student_system/students.txt");
-    
+    std::ofstream outFile("/home/netaasree/bazel_projects/project2/student_system/students.txt",std::ios::app);
+    outFile<<"Test 100"<<std::endl;
     std::string name;
     int age;
 
