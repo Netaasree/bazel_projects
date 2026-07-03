@@ -6,8 +6,6 @@
 int main(){
     StudentDatabase db;
     std::ifstream file("/home/netaasree/bazel_projects/project2/student_system/students.txt");
-    std::ofstream outFile("/home/netaasree/bazel_projects/project2/student_system/students.txt",std::ios::app);
-    outFile<<"Test 100"<<std::endl;
     std::string name;
     int age;
 
@@ -16,20 +14,15 @@ int main(){
     db.addStudent(newStudent);
     };
 
-    if(file.is_open()){
-        std::cout<<"File opened successfully!"<<std::endl;
-    }
-    else{
-        std::cout<<"File not opened"<<std::endl;
-    }
     int choice=0;
-    while (choice!=5){
+    while (choice!=6){
     std::cout << "\nStudent Management System\n";
     std::cout << "1. Add Student\n";
     std::cout << "2. Display Students\n";
     std::cout << "3. Search Student\n";
     std::cout << "4. Remove Student\n";
-    std::cout << "5. Exit\n";
+    std::cout << "5. Update Student\n";
+    std::cout<<"6. Exit\n";
 
     std::cout<<"Enter choice: ";
     std::cin>>choice;
@@ -64,6 +57,18 @@ int main(){
         std::cin>>name;
         
         db.removeStudent(name);
+    }
+    if(choice==5){
+        std::string name;
+        int age;
+
+        std::cout<<"Enter student name: ";
+        std::cin>>name;
+
+        std::cout<<"Enter new age: ";
+        std::cin>>age;
+
+        db.updateStudent(name,age);
     }
     }
 }

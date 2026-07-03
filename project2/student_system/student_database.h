@@ -12,6 +12,8 @@ class StudentDatabase{
         void displayAllStudents();
         void searchStudent(std::string name);
         void removeStudent(std::string name);
+        void saveToFile();
+        void updateStudent(std::string name,int nameAge);
 };
 
 #endif
