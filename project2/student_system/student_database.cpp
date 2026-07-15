@@ -58,3 +58,7 @@ void StudentDatabase::updateStudent(std::string name,int newAge){
     }
     std::cout<<"Student not Found"<<std::endl;
 }
+
+void StudentDatabase::loadStudent(Student student){
+    students.push_back(student);
+}

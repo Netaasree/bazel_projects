@@ -14,6 +14,7 @@ class StudentDatabase{
         void removeStudent(std::string name);
         void saveToFile();
         void updateStudent(std::string name,int nameAge);
+        void loadStudent(Student student);
 };
 
 #endif

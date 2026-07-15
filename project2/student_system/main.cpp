@@ -11,7 +11,7 @@ int main(){
 
     while(file>>name>>age){
     Student newStudent(name,age);
-    db.addStudent(newStudent);
+    db.loadStudent(newStudent);
     };
 
     int choice=0;
