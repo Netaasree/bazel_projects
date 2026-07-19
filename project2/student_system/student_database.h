@@ -10,11 +10,12 @@ class StudentDatabase{
 
         void addStudent(Student newstudent);
         void displayAllStudents();
-        void searchStudent(std::string name);
-        void removeStudent(std::string name);
+        void searchStudent(int id);
+        void removeStudent(int id);
         void saveToFile();
-        void updateStudent(std::string name,int nameAge);
+        void updateStudent(int id,int nameAge);
         void loadStudent(Student student);
+        int generateStudentId();
 };
 
 #endif

@@ -13,9 +13,10 @@ void StudentDatabase::displayAllStudents() {
     }
 }
 
-void StudentDatabase::searchStudent(std::string name) {
+#
+void StudentDatabase::searchStudent(int id) {
     for (Student student : students) {
-        if (student.name == name) {
+        if (student.id == id) {
             student.displayInfo();
             return;
         }
@@ -24,9 +25,10 @@ void StudentDatabase::searchStudent(std::string name) {
     std::cout << "Student not found" << std::endl;
 }
 
-void StudentDatabase::removeStudent(std::string name) {
+#
+void StudentDatabase::removeStudent(int id) {
     for (size_t i = 0; i < students.size(); i++) {
-        if (students[i].name == name) {
+        if (students[i].id == id) {
             students.erase(students.begin() + i);
             saveToFile();
             std::cout << "Student removed" << std::endl;
@@ -37,28 +39,32 @@ void StudentDatabase::removeStudent(std::string name) {
     std::cout << "Student not found" << std::endl;
 }
 
-void StudentDatabase::saveToFile(){
+void StudentDatabase::saveToFile() {
     std::ofstream outFile("/home/netaasree/bazel_projects/project2/student_system/students.txt");
-    /*middle student is variable*/
-    for(Student student:students){
-        outFile<<student.name<<" "<<student.age<<std::endl;
+
+    for (Student student : students) {
+        outFile << student.id << " "
+                << student.name << " "
+                << student.age << std::endl;
     }
 }
 
-void StudentDatabase::updateStudent(std::string name,int newAge){
-    for(Student &student: students){
-        if(student.name==name){
-            student.age=newAge;
-            
+void StudentDatabase::updateStudent(int id, int newAge) {
+    for (Student &student : students) {
+        if (student.id == id) {
+            student.age = newAge;
+
             saveToFile();
 
-            std::cout<<"Student updated successfully!"<<std::endl;
+            std::cout << "Student updated successfully!" << std::endl;
             return;
         }
     }
-    std::cout<<"Student not Found"<<std::endl;
+
+    std::cout << "Student not found" << std::endl;
 }
 
-void StudentDatabase::loadStudent(Student student){
+
+void StudentDatabase::loadStudent(Student student) {
     students.push_back(student);
 }

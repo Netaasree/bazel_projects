@@ -5,10 +5,11 @@
 
 class Student{
     public:
+    int id;
     std::string name;
     int age;
 
-    Student(std::string studentName,int studentAge);
+    Student(int studentId,std::string studentName,int studentAge);
     
     void displayInfo();
 };
